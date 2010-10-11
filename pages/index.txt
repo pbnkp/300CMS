@@ -1,0 +1,4 @@
+Welcome to your new 300CMS site!
+================================
+
+To add a page, just create a .txt file in `/pages`.

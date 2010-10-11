@@ -1,0 +1,1 @@
+<?php function f($q){return file_get_contents($q);}include("m.php");$p=isset($_GET["p"])?$_GET["p"]:"index";$f="pages/$p.txt";if(file_exists($f)){$c=f($f);}else{header("HTTP/1.1 404 Not Found");$c=f("pages/404.txt");}include("plug.php");echo str_replace("{{{CONTENT}}}",markdown($c),f("theme.html"));

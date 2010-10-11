@@ -1,0 +1,44 @@
+What is 300CMS?
+===============
+
+300CMS is a CMS written in PHP which is exactly 300 bytes (except for the Markdown parser) and does not use a database. It is easy to set up, and content is added as plain text files in [Markdown][markdown] format.
+
+  [markdown]:http://daringfireball.net/projects/markdown/
+
+How do I install it?
+====================
+Installing is as easy as putting the required files on a web server.
+
+How do I use it?
+================
+300CMS consists of 7 files:
+
+    index.php
+    m.php
+    plug.php
+    pages [DIR]
+    --404.txt
+    --index.txt
+    theme [DIR]
+    --style.css
+    plugins [DIR]
+    theme.html
+
+ - The `pages` directory contains all pages, in Markdown format with the `.txt` file extension.
+ - The `theme` directory contains all files the theme needs.
+ - The `plugins` directory contains all plugins.
+ - `theme.html` is the main theme file. Somewhere in this file there is `{{{CONTENT}}}` which gets replaced by the parsed Markdown.
+
+Just make as much pages as you want, by putting them into the `pages` directory. The page you want to view is given with the `p` query string parameter, e.g. `http://www.example.com/?p=foo`. You could use a `.htaccess` file to rewrite this if you like.
+
+Plugins
+======
+Plugins are also available, for example, a plugin that allows you to edit stuff. Plugins are installed in the `plugins` directory.
+
+Sys. reqs.
+==========
+
+Requirement        | Minimum
+-------------------|---------------
+PHP version        | PHP 4.3.0 &ge;
+Free disk space    | 93 KB &ge;
